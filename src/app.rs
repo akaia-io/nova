@@ -1,9 +1,10 @@
-mod id;
+mod desktop;
+mod error;
 mod index;
-mod not_found;
 
 use {
-	self::{id::IdPage, index::IndexPage, not_found::NotFoundPage},
+	self::{desktop::NovaDesktop, error::ErrorScreen, index::Dashboard},
+	crate::IMPORT_MAP,
 	leptos::*,
 	leptos_meta::*,
 	leptos_query::{provide_query_client_with_options_and_persister, query_persister},
@@ -21,17 +22,20 @@ pub fn Nova() -> impl IntoView {
 	);
 
 	view! {
-		<Script id={"unocss"} src={"/static/vendor/uno_attributify.runtime.js"}/>
-		<Stylesheet id={"leptos"} href={"/app/akaia_nova.css"}/>
 		<Title text={"AKAIA"}/>
+		<Script r#type_="importmap">{IMPORT_MAP}</Script>
+		<Script r#type_="module" id={"framework"} src={"/static/packages/framework/index.js"}/>
+		<Script id={"unocss"} src={"/static/packages/uno_attributify.runtime.js"}/>
+		<Stylesheet id={"leptos"} href={"/app/akaia_nova.css"}/>
 		<Body attr:m={"0"} attr:h={"100vh"} attr:flex={"~ col"}/>
 
 		<Router>
 			<main p={"4"} h={"100%"} flex={"~ col"} items={"center"} justify={"center"}>
 				<Routes>
-					<Route path={"/"} view={IndexPage}/>
-					<Route path={"/:id"} view={IdPage}/>
-					<Route path={"/*any"} view={NotFoundPage}/>
+					<Route path={"/"} view={Dashboard}/>
+					<Route path={"/:widget_route"} view={NovaDesktop}/>
+					<Route path={"/error"} view={ErrorScreen}/>
+					<Route path={"/*any"} view={Dashboard}/>
 				</Routes>
 			</main>
 		</Router>

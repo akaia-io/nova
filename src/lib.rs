@@ -3,9 +3,12 @@
 use leptos::*;
 
 pub mod app;
+
+mod entities;
+pub use entities::*;
+
 mod common;
 pub use common::*;
-pub mod core;
 
 #[wasm_bindgen::prelude::wasm_bindgen]
 pub fn hydrate() {
