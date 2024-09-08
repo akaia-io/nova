@@ -8,15 +8,15 @@ use {
 
 #[derive(Params, PartialEq)]
 pub struct ApplicationShellRouteParams {
-	widget_route: String,
+	app_route: String,
 }
 
 #[component]
 pub fn AppShell(#[prop(into)] props: String) -> impl IntoView {
-	let widget_route = use_params::<ApplicationShellRouteParams>().with(|params| {
+	let app_route = use_params::<ApplicationShellRouteParams>().with(|params| {
 		params
 			.as_ref()
-			.map(|params| params.widget_route.clone())
+			.map(|params| params.app_route.clone())
 			.unwrap()
 	});
 
@@ -34,5 +34,5 @@ pub fn AppShell(#[prop(into)] props: String) -> impl IntoView {
 		})
 	};
 
-	view! { <AppShellViewport route={widget_route} query={route_query_json()} props={props} /> }
+	view! { <AppShellViewport route={app_route} query={route_query_json()} props={props} /> }
 }

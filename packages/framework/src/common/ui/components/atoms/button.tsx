@@ -33,9 +33,7 @@ const buttonVariants = cva(
 	},
 )
 
-export interface ButtonProps
-	extends ButtonPrimitive.ButtonRootProps,
-		VariantProps<typeof buttonVariants> {}
+export type ButtonProps = ButtonPrimitive.ButtonRootProps & VariantProps<typeof buttonVariants> & {}
 
 const Button: Component<ButtonProps> = (props) => {
 	const [, rest] = splitProps(props, ["variant", "size", "class"])

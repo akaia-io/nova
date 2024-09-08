@@ -13,3 +13,5 @@ export const init = () => {
 }
 
 init()
+
+export * from "@/common/ui/components"

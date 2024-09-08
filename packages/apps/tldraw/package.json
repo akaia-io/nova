@@ -42,7 +42,7 @@
 		"prepublishOnly": "pnpm build"
 	},
 	"dependencies": {
-		"@akaia/framework": "*",
+		"@akaia/framework": "workspace:*",
 		"@unocss/preset-attributify": "^0.62.2",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",

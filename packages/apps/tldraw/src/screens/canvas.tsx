@@ -19,7 +19,7 @@ export const TLDrawCanvas: Component = () => {
 		>
 			<h1>
 				{`
-					Loading ${ctx.account_id}'s ${ctx.widget_id} ${ctx.route_path}
+					Loading ${ctx.account_id}'s ${ctx.app_id} ${ctx.route_path}
 					${ctx.route_query !== null ? ` with ID ${ctx.route_query.id} ` : ""}...
 				`}
 			</h1>

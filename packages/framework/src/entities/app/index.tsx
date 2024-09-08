@@ -13,7 +13,7 @@ export const appLauncherInit = () => {
 
 			class AkaiaApp extends HTMLElement {
 				static get observedAttributes(): (keyof WidgetInputs)[] {
-					return ["account_id", "widget_id", "route_path", "route_query", "props"]
+					return ["account_id", "app_id", "route_path", "route_query", "props"]
 				}
 
 				attributeChangedCallback(name: keyof WidgetInputs, oldValue: string, newValue: string) {

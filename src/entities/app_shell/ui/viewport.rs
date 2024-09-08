@@ -43,7 +43,7 @@ pub fn AppShellViewport(
 	view! {
 		<akaia-app
 			account_id={account_id}
-			widget_id={id}
+			app_id={id}
 			route_path={route}
 			route_query={query}
 			props={props}
