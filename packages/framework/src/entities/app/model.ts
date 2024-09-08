@@ -9,7 +9,7 @@ export type WidgetInputs = {
 	props: string
 }
 
-export type WidgetContextState = {
+export type AppContextState = {
 	account_id: null | WidgetInputs["account_id"]
 	widget_id: null | WidgetInputs["widget_id"]
 	route_path: null | string
@@ -17,7 +17,7 @@ export type WidgetContextState = {
 	props: null | object
 }
 
-const initialLauncherParams: WidgetContextState = {
+const initialAppContext: AppContextState = {
 	account_id: null,
 	widget_id: null,
 	route_path: null,
@@ -25,8 +25,8 @@ const initialLauncherParams: WidgetContextState = {
 	props: null,
 }
 
-export const WidgetContext = createContext(initialLauncherParams)
+export const AppContext = createContext(initialAppContext)
 
-export const [widgetContextState, setWidgetContextState] = createStore(initialLauncherParams)
+export const [widgetContextState, setAppContextState] = createStore(initialAppContext)
 
-export const useWidgetContext = () => useContext(WidgetContext)
+export const useAppContext = () => useContext(AppContext)

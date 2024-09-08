@@ -1,29 +1,24 @@
 import { render } from "solid-js/web"
-import {
-	type WidgetInputs,
-	widgetContextState,
-	WidgetContext,
-	setWidgetContextState,
-} from "./model"
-import { ExampleWidget } from "./example"
+import { type WidgetInputs, widgetContextState, AppContext, setAppContextState } from "./model"
+import { ExampleApp } from "./example"
 
-export { useWidgetContext } from "./model"
+export { useAppContext } from "./model"
 
-const tagName = "akaia-widget"
+const tagName = "akaia-app"
 
-export const widgetLauncherInit = () => {
+export const appLauncherInit = () => {
 	if (customElements.get(tagName) === undefined) {
 		customElements.define(
 			tagName,
 
-			class AkaiaWidget extends HTMLElement {
+			class AkaiaApp extends HTMLElement {
 				static get observedAttributes(): (keyof WidgetInputs)[] {
 					return ["account_id", "widget_id", "route_path", "route_query", "props"]
 				}
 
 				attributeChangedCallback(name: keyof WidgetInputs, oldValue: string, newValue: string) {
 					if (oldValue !== newValue) {
-						setWidgetContextState((props) => ({
+						setAppContextState((props) => ({
 							...props,
 							[name]: name === "route_query" || name === "props" ? JSON.parse(newValue) : newValue,
 						}))
@@ -34,10 +29,10 @@ export const widgetLauncherInit = () => {
 					render(
 						() => {
 							return (
-								<WidgetContext.Provider value={widgetContextState}>
+								<AppContext.Provider value={widgetContextState}>
 									<link rel="stylesheet" href="/app/akaia_nova.css" />
-									<ExampleWidget />
-								</WidgetContext.Provider>
+									<ExampleApp />
+								</AppContext.Provider>
 							)
 						},
 

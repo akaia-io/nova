@@ -1,7 +1,7 @@
 use {leptos::*, leptos_use::use_window};
 
 #[island]
-pub fn AppShellWidgetViewport(
+pub fn AppShellViewport(
 	#[prop(into)] route: String, #[prop(into)] query: String, #[prop(into)] props: String,
 ) -> impl IntoView {
 	let this = use_window();
@@ -41,7 +41,7 @@ pub fn AppShellWidgetViewport(
 	});
 
 	view! {
-		<akaia-widget
+		<akaia-app
 			account_id={account_id}
 			widget_id={id}
 			route_path={route}

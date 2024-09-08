@@ -1,10 +1,10 @@
-import { defineWidget } from "@akaia/widgets-core"
-import { DemoScreen } from "./widget"
+import { defineApp } from "@akaia/framework"
+import { DemoScreen } from "./screens/demo"
 
-export type AkaiaWidget = {
+export type AkaiaApp = {
 	init: () => void
 }
 
-export const VaultWidget: AkaiaWidget = defineWidget({
+export const VaultWidget: AkaiaApp = defineApp({
 	routes: [{ path: "/demo", component: DemoScreen }],
 })

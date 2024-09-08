@@ -1,10 +1,9 @@
 import type { Component } from "solid-js"
 
-import { Button } from "@/common/ui/components"
-import { useWidgetContext } from "@/entities/widget"
+import { Button, useAppContext } from "@akaia/framework"
 
-export const ExampleWidget: Component = () => {
-	const ctx = useWidgetContext()
+export const TLDrawCanvas: Component = () => {
+	const ctx = useAppContext()
 
 	return (
 		<div

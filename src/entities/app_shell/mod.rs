@@ -1,7 +1,7 @@
 mod ui;
 
 use {
-	self::ui::AppShellWidgetViewport,
+	self::ui::AppShellViewport,
 	leptos::*,
 	leptos_router::{use_params, use_query_map, Params},
 };
@@ -34,5 +34,5 @@ pub fn AppShell(#[prop(into)] props: String) -> impl IntoView {
 		})
 	};
 
-	view! { <AppShellWidgetViewport route={widget_route} query={route_query_json()} props={props} /> }
+	view! { <AppShellViewport route={widget_route} query={route_query_json()} props={props} /> }
 }

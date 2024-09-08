@@ -33,7 +33,7 @@ pub fn Nova() -> impl IntoView {
 			<main p={"4"} h={"100%"} flex={"~ col"} items={"center"} justify={"center"}>
 				<Routes>
 					<Route path={"/"} view={Dashboard}/>
-					<Route path={"/:widget_route"} view={NovaDesktop}/>
+					<Route path={"/:app_route"} view={NovaDesktop}/>
 					<Route path={"/error"} view={ErrorScreen}/>
 					<Route path={"/*any"} view={Dashboard}/>
 				</Routes>
