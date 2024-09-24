@@ -6,6 +6,7 @@ setup:
 	(cargo install cargo-leptos leptosfmt)
 	(cargo install tauri-cli --version "^2.0.0-rc")
 	(cargo install dioxus-cli)
+	(cargo install --locked cargo-xwin)
 
 vendor:
 	(cargo vendor .cache/cargo)
@@ -25,6 +26,14 @@ dev-launcher:
 
 dev: build-framework
 	(cargo make devserver)
+
+build-portal:
+	(cd ./packages/portal && dx build)
+
+build-launcher:
+	(cd ./apps/launcher && cargo tauri build)
+# (rustup target add aarch64-pc-windows-msvc)
+# (cd ./apps/launcher && cargo tauri build --target aarch64-pc-windows-msvc --bundles nsis)
 
 build:
 	(cargo leptos build --release)

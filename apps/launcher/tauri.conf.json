@@ -5,7 +5,7 @@
 	"identifier": "akaia.nova.portal",
 	"build": {
 		"devUrl": "http://localhost:1420",
-		"frontendDist": "../portal/dist"
+		"frontendDist": "../../packages/portal/dist"
 	},
 	"app": {
 		"withGlobalTauri": true,

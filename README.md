@@ -13,7 +13,7 @@ Install Mise unless it's already installed:
 #### Ubuntu 24.04 requirements
 
 ```sh
-sudo apt install gcc automake cmake
+sudo apt-get install build-essential pkg-config curl wget libglib2.0-dev libssl-dev libgtk-3-dev libappindicator3-dev librsvg2-dev libgdk3.0-cil libatk1.0-dev libssl-dev libgdk3.0-cil-dev libjavascriptcoregtk-4.1-dev libwebkit2gtk-4.1-dev nsis lld llvm
 ```
 
 ### Installing required tools and dependencies
