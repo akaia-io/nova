@@ -5,6 +5,7 @@ setup:
 	(cargo install --locked cargo-make cargo-expand cargo-tree)
 	(cargo install cargo-leptos leptosfmt)
 	(cargo install tauri-cli --version "^2.0.0-rc")
+	(cargo install dioxus-cli)
 
 vendor:
 	(cargo vendor .cache/cargo)
