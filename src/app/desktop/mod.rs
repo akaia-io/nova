@@ -1,6 +1,6 @@
-use {crate::AppShell, leptos::*};
+use {crate::ExtensionShell, leptos::*};
 
 #[component]
 pub fn NovaDesktop() -> impl IntoView {
-	view! { <AppShell props={r#"{ "name": "akaia" }"#} /> }
+	view! { <ExtensionShell props={r#"{ "name": "akaia" }"#} /> }
 }

@@ -1,5 +1,7 @@
 {
 	"recommendations": [
-		"biomejs.biome"
+		"biomejs.biome",
+		"tauri-apps.tauri-vscode",
+		"DioxusLabs.dioxus"
 	]
 }

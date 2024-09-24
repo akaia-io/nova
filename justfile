@@ -4,6 +4,7 @@
 setup:
 	(cargo install --locked cargo-make cargo-expand cargo-tree)
 	(cargo install cargo-leptos leptosfmt)
+	(cargo install tauri-cli --version "^2.0.0-rc")
 
 vendor:
 	(cargo vendor .cache/cargo)
@@ -13,10 +14,13 @@ fmt:
 	(leptosfmt ./src)
 
 build-framework:
-	(cargo make applet_runtime_build)
+	(cargo make framework_build)
 
 dev: build-framework
 	(cargo make devserver)
+
+alpha-launcher: build-framework
+	(cd ./services/launcher && tauri dev)
 
 build:
 	(cargo leptos build --release)

@@ -1,19 +1,19 @@
 mod ui;
 
 use {
-	self::ui::AppShellViewport,
+	self::ui::ExtensionShellViewport,
 	leptos::*,
-	leptos_router::{use_params, use_query_map, Params},
+	leptos_router::{Params, use_params, use_query_map},
 };
 
 #[derive(Params, PartialEq)]
-pub struct ApplicationShellRouteParams {
+pub struct ExtensionShellRouteParams {
 	app_route: String,
 }
 
 #[component]
-pub fn AppShell(#[prop(into)] props: String) -> impl IntoView {
-	let app_route = use_params::<ApplicationShellRouteParams>().with(|params| {
+pub fn ExtensionShell(#[prop(into)] props: String) -> impl IntoView {
+	let app_route = use_params::<ExtensionShellRouteParams>().with(|params| {
 		params
 			.as_ref()
 			.map(|params| params.app_route.clone())
@@ -34,5 +34,5 @@ pub fn AppShell(#[prop(into)] props: String) -> impl IntoView {
 		})
 	};
 
-	view! { <AppShellViewport route={app_route} query={route_query_json()} props={props} /> }
+	view! { <ExtensionShellViewport route={app_route} query={route_query_json()} props={props} /> }
 }

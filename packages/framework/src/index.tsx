@@ -1,4 +1,4 @@
-import { useAppContext, appLauncherInit } from "@/entities/app"
+import { install } from "@/entities/extension"
 
 import type { AttributifyAttributes } from "@unocss/preset-attributify"
 
@@ -8,10 +8,10 @@ declare module "solid-js" {
 	}
 }
 
+export * from "@/common/ui/components"
+
 export const init = () => {
-	appLauncherInit()
+	install()
 }
 
 init()
-
-export * from "@/common/ui/components"

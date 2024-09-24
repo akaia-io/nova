@@ -1,9 +1,9 @@
-[tasks.applet_runtime_build]
+[tasks.framework_build]
 command = "pnpm"
 args = ["-C", "packages/framework", "build"]
 
 
-[tasks.applet_runtime_live_rebuild]
+[tasks.framework_live_rebuild]
 command = "pnpm"
 args = ["-C", "packages/framework", "watch"]
 
@@ -15,6 +15,6 @@ args = ["leptos", "watch"]
 
 [tasks.devserver]
 run_task = { name = [
-	"applet_runtime_live_rebuild",
+	"framework_live_rebuild",
 	"gateway_devserver",
 ], parallel = true }
