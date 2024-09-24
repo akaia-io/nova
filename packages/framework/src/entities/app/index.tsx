@@ -1,7 +1,8 @@
 import { render } from "solid-js/web"
+
 import { type WidgetInputs, widgetContextState, AppContext, setAppContextState } from "./model"
 import { ExampleApp } from "./example"
-
+import { getDb } from "@/common/db"
 export { useAppContext } from "./model"
 
 const tagName = "akaia-app"
@@ -26,6 +27,8 @@ export const appLauncherInit = () => {
 				}
 
 				connectedCallback() {
+					console.log(getDb()?.info())
+
 					render(
 						() => {
 							return (

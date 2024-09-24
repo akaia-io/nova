@@ -34,5 +34,8 @@ export default defineConfig((config) => {
 		preset.writePackageJson(package_fields)
 	}
 
-	return preset.generateTsupOptions(parsed_options)
+	return preset.generateTsupOptions(parsed_options).map((entryConfig) => ({
+		...entryConfig, // https://github.com/egoist/tsup/issues/619
+		noExternal: [/(.*)/],
+	}))
 })

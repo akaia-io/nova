@@ -28,7 +28,7 @@ importers:
         version: 2.1.1
       jsdom:
         specifier: ^24.0.0
-        version: 24.1.1
+        version: 24.1.1(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       remeda:
         specifier: ^2.11.0
         version: 2.11.0
@@ -92,7 +92,7 @@ importers:
         version: 2.10.2(solid-js@1.8.21)(vite@5.4.2(@types/node@20.16.1))
       vitest:
         specifier: ^1.6.0
-        version: 1.6.0(@types/node@20.16.1)(jsdom@24.1.1)
+        version: 1.6.0(@types/node@20.16.1)(jsdom@24.1.1(bufferutil@4.0.8)(utf-8-validate@6.0.4))
 
   packages/framework:
     dependencies:
@@ -102,6 +102,9 @@ importers:
       '@solid-primitives/refs':
         specifier: ^1.0.8
         version: 1.0.8(solid-js@1.8.21)
+      '@surrealdb/wasm':
+        specifier: 1.0.0-beta.16
+        version: 1.0.0-beta.16(surrealdb@1.0.0(tslib@2.7.0)(typescript@5.5.4)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)))
       '@unocss/preset-attributify':
         specifier: ^0.62.2
         version: 0.62.2
@@ -125,7 +128,7 @@ importers:
         version: 8.2.0(solid-js@1.8.21)
       jsdom:
         specifier: ^24.0.0
-        version: 24.1.1
+        version: 24.1.1(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       remeda:
         specifier: ^2.11.0
         version: 2.11.0
@@ -135,6 +138,9 @@ importers:
       solid-js:
         specifier: ^1.8.18
         version: 1.8.21
+      surrealdb:
+        specifier: ^1.0.0
+        version: 1.0.0(tslib@2.7.0)(typescript@5.5.4)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.4))
       tailwind-merge:
         specifier: ^2.3.0
         version: 2.5.2
@@ -195,7 +201,7 @@ importers:
         version: 2.10.2(solid-js@1.8.21)(vite@5.4.2(@types/node@20.16.1))
       vitest:
         specifier: ^1.6.0
-        version: 1.6.0(@types/node@20.16.1)(jsdom@24.1.1)
+        version: 1.6.0(@types/node@20.16.1)(jsdom@24.1.1(bufferutil@4.0.8)(utf-8-validate@6.0.4))
 
 packages:
 
@@ -1005,6 +1011,11 @@ packages:
     peerDependencies:
       solid-js: ^1.6.12
 
+  '@surrealdb/wasm@1.0.0-beta.16':
+    resolution: {integrity: sha512-S+6jyVTJdjf9MFdi3hcd5qbU6dWlVUW1Vd+CxiT4VHElLatB13fbwt8rMsZ8Z1HNJRWaA7oVsMiH2KbZqn3K4Q==}
+    peerDependencies:
+      surrealdb: ^1.0.0-beta.20
+
   '@swc/helpers@0.5.12':
     resolution: {integrity: sha512-KMZNXiGibsW9kvZAO1Pam2JPTDBm+KSHMMHWdsyI/1DbIZjT2A6Gy3hblVXUMEDvUAKq+e0vL0X0o54owWji7g==}
 
@@ -1207,6 +1218,10 @@ packages:
     resolution: {integrity: sha512-btwCFJVjI4YWDNfau8RhZ+B1Q/VLoUITrm3RlP6y1tYGWIOa+InuYiRGXUBXo8nA1qKmHMyLB/iVQg5TT4eFoA==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
+
+  bufferutil@4.0.8:
+    resolution: {integrity: sha512-4T53u4PdgsXqKaIctwF8ifXlRTTmEPJ8iEPWFdGZvcf7sbwYo6FKFEX9eNNAnzFZ7EzJAQ3CJeOtCRA4rDp7Pw==}
+    engines: {node: '>=6.14.2'}
 
   bundle-require@5.0.0:
     resolution: {integrity: sha512-GuziW3fSSmopcx4KRymQEJVbZUfqlCqcq7dvs6TYwKRZiegK/2buMxQTPs6MGlNv50wms1699qYO54R8XfRX4w==}
@@ -1709,6 +1724,11 @@ packages:
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
+  isows@1.0.4:
+    resolution: {integrity: sha512-hEzjY+x9u9hPmBom9IIAqdJCwNLax+xrPb51vEPpERoFlIxgmZcHzsT5jKG06nvInKOBGvReAVz80Umed5CczQ==}
+    peerDependencies:
+      ws: '*'
+
   jackspeak@3.4.3:
     resolution: {integrity: sha512-OGlZQpz2yfahA/Rd1Y8Cd9SIEsqvXkLVoSw/cgwhnhFMDbsQFeZYoJJ7bIZBS9BcamUW96asq/npPWugM+RQBw==}
 
@@ -1867,6 +1887,10 @@ packages:
 
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
+
+  node-gyp-build@4.8.2:
+    resolution: {integrity: sha512-IRUxE4BVsHWXkV/SFOut4qTlagw2aM8T5/vnTsmrHJvVoKueJHRc/JaFND7QDDc61kLYUJ6qlZM3sqTSyx2dTw==}
+    hasBin: true
 
   node-releases@2.0.18:
     resolution: {integrity: sha512-d9VeXT4SJ7ZeOqGX6R5EM022wpL+eWPooLI+5UpWn2jCT1aosUQEhQP214x33Wkwx3JQMvIm+tIoVOdodFS40g==}
@@ -2293,6 +2317,13 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
+  surrealdb@1.0.0:
+    resolution: {integrity: sha512-xpXwUG56feMjMSSNMTnGb20Qc0GLHt3Nxwop33N9w7kAtAQMT/sHLnTxzPcAVKAkjIe0oTSPiBfuO2uxplN4jw==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      tslib: ^2.6.3
+      typescript: ^5.0.0
+
   symbol-tree@3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
 
@@ -2432,8 +2463,16 @@ packages:
   url-parse@1.5.10:
     resolution: {integrity: sha512-WypcfiRhfeUP9vvF0j6rw0J3hrWrw6iZv3+22h6iRMJ/8z1Tj6XfLP4DsUix5MhMPnXpiHDoKyoZ/bdCkwBCiQ==}
 
+  utf-8-validate@6.0.4:
+    resolution: {integrity: sha512-xu9GQDeFp+eZ6LnCywXN/zBancWvOpUMzgjLPSjy4BRHSmTelvn2E0DG0o1sTiw5hkCKBHo8rwSKncfRfv2EEQ==}
+    engines: {node: '>=6.14.2'}
+
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+
+  uuidv7@1.0.2:
+    resolution: {integrity: sha512-8JQkH4ooXnm1JCIhqTMbtmdnYEn6oKukBxHn1Ic9878jMkL7daTI7anTExfY18VRCX7tcdn5quzvCb6EWrR8PA==}
+    hasBin: true
 
   validate-html-nesting@1.2.2:
     resolution: {integrity: sha512-hGdgQozCsQJMyfK5urgFcWEqsSSrK63Awe0t/IMR0bZ0QMtnuaiHzThW81guu3qx9abLi99NEuiaN6P9gVYsNg==}
@@ -3342,6 +3381,10 @@ snapshots:
     dependencies:
       solid-js: 1.8.21
 
+  '@surrealdb/wasm@1.0.0-beta.16(surrealdb@1.0.0(tslib@2.7.0)(typescript@5.5.4)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)))':
+    dependencies:
+      surrealdb: 1.0.0(tslib@2.7.0)(typescript@5.5.4)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.4))
+
   '@swc/helpers@0.5.12':
     dependencies:
       tslib: 2.7.0
@@ -3584,6 +3627,11 @@ snapshots:
       electron-to-chromium: 1.5.13
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.23.3)
+
+  bufferutil@4.0.8:
+    dependencies:
+      node-gyp-build: 4.8.2
+    optional: true
 
   bundle-require@5.0.0(esbuild@0.23.1):
     dependencies:
@@ -4160,6 +4208,10 @@ snapshots:
 
   isexe@2.0.0: {}
 
+  isows@1.0.4(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)):
+    dependencies:
+      ws: 8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)
+
   jackspeak@3.4.3:
     dependencies:
       '@isaacs/cliui': 8.0.2
@@ -4178,7 +4230,7 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  jsdom@24.1.1:
+  jsdom@24.1.1(bufferutil@4.0.8)(utf-8-validate@6.0.4):
     dependencies:
       cssstyle: 4.0.1
       data-urls: 5.0.0
@@ -4199,7 +4251,7 @@ snapshots:
       whatwg-encoding: 3.1.1
       whatwg-mimetype: 4.0.0
       whatwg-url: 14.0.0
-      ws: 8.18.0
+      ws: 8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)
       xml-name-validator: 5.0.0
     transitivePeerDependencies:
       - bufferutil
@@ -4313,6 +4365,9 @@ snapshots:
   nanoid@3.3.7: {}
 
   natural-compare@1.4.0: {}
+
+  node-gyp-build@4.8.2:
+    optional: true
 
   node-releases@2.0.18: {}
 
@@ -4694,6 +4749,15 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
+  surrealdb@1.0.0(tslib@2.7.0)(typescript@5.5.4)(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.4)):
+    dependencies:
+      isows: 1.0.4(ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.4))
+      tslib: 2.7.0
+      typescript: 5.5.4
+      uuidv7: 1.0.2
+    transitivePeerDependencies:
+      - ws
+
   symbol-tree@3.2.4: {}
 
   tailwind-merge@2.5.2: {}
@@ -4845,7 +4909,14 @@ snapshots:
       querystringify: 2.2.0
       requires-port: 1.0.0
 
+  utf-8-validate@6.0.4:
+    dependencies:
+      node-gyp-build: 4.8.2
+    optional: true
+
   util-deprecate@1.0.2: {}
+
+  uuidv7@1.0.2: {}
 
   validate-html-nesting@1.2.2: {}
 
@@ -4893,7 +4964,7 @@ snapshots:
     optionalDependencies:
       vite: 5.4.2(@types/node@20.16.1)
 
-  vitest@1.6.0(@types/node@20.16.1)(jsdom@24.1.1):
+  vitest@1.6.0(@types/node@20.16.1)(jsdom@24.1.1(bufferutil@4.0.8)(utf-8-validate@6.0.4)):
     dependencies:
       '@vitest/expect': 1.6.0
       '@vitest/runner': 1.6.0
@@ -4917,7 +4988,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 20.16.1
-      jsdom: 24.1.1
+      jsdom: 24.1.1(bufferutil@4.0.8)(utf-8-validate@6.0.4)
     transitivePeerDependencies:
       - less
       - lightningcss
@@ -4978,7 +5049,10 @@ snapshots:
 
   wrappy@1.0.2: {}
 
-  ws@8.18.0: {}
+  ws@8.18.0(bufferutil@4.0.8)(utf-8-validate@6.0.4):
+    optionalDependencies:
+      bufferutil: 4.0.8
+      utf-8-validate: 6.0.4
 
   xml-name-validator@5.0.0: {}
 

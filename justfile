@@ -1,9 +1,9 @@
 # (cargo install --git https://github.com/bram209/leptosfmt.git)
 
+#	(sudo apt-get install pkg-config libssl-dev)
 setup:
-	(sudo apt-get install pkg-config libssl-dev)
 	(cargo install --locked cargo-make cargo-expand cargo-tree)
-	(cargo install cargo-leptos leptosfmt)
+	(cargo install cargo-leptos leptosfmt dioxus-cli)
 
 vendor:
 	(cargo vendor .cache/cargo)

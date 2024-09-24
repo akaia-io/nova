@@ -30,6 +30,7 @@ leptos_declarative = "0.3.0"
 leptos-tracked = "0.1.4"
 cfg-if = "1.0.0"
 custom-elements = "0.2.1"
+surrealdb = "1.4.2"
 
 [features]
 csr = ["leptos/csr", "leptos_meta/csr", "leptos_router/csr"]

@@ -3,12 +3,13 @@
 		"strict": true,
 		"target": "ESNext",
 		"module": "ESNext",
+		"moduleDetection": "force",
 		"lib": [
 			"DOM",
 			"DOM.Iterable",
 			"ESNext"
 		],
-		"moduleResolution": "node",
+		"moduleResolution": "bundler",
 		"resolveJsonModule": true,
 		"esModuleInterop": true,
 		"noEmit": true,
@@ -17,6 +18,7 @@
 		"allowSyntheticDefaultImports": true,
 		"forceConsistentCasingInFileNames": true,
 		"noUncheckedIndexedAccess": true,
+		"noFallthroughCasesInSwitch": true,
 		"jsx": "preserve",
 		"jsxImportSource": "solid-js",
 		"types": [],
