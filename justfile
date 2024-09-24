@@ -3,7 +3,7 @@
 #	(sudo apt-get install pkg-config libssl-dev)
 setup:
 	(cargo install --locked cargo-make cargo-expand cargo-tree)
-	(cargo install cargo-leptos leptosfmt dioxus-cli)
+	(cargo install cargo-leptos leptosfmt)
 
 vendor:
 	(cargo vendor .cache/cargo)
