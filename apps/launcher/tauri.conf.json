@@ -4,9 +4,7 @@
 	"version": "0.1.0",
 	"identifier": "akaia.nova.portal",
 	"build": {
-		"beforeDevCommand": "cd ../../../../packages/portal && dx serve --port 1420",
 		"devUrl": "http://localhost:1420",
-		"beforeBuildCommand": "cd ../../../../packages/portal && dx build",
 		"frontendDist": "../portal/dist"
 	},
 	"app": {

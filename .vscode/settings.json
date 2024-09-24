@@ -44,6 +44,8 @@
 		"kobalte",
 		"NOFILE",
 		"nologin",
+		"oninput",
+		"onsubmit",
 		"reshim",
 		"solidui",
 		"Stylesheet",

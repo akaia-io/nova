@@ -1,6 +1,6 @@
 # AKAIA Nova
 
-An alternative implementation of NEAR BOS gateway
+An alternative implementation of Blockchain Operating System concept on NEAR Protocol.
 
 ## Development
 

@@ -16,11 +16,14 @@ fmt:
 build-framework:
 	(cargo make framework_build)
 
+dev-portal:
+	(cd ./packages/portal && dx serve --port 1420)
+
+dev-launcher:
+	(cd ./apps/launcher && cargo tauri dev)
+
 dev: build-framework
 	(cargo make devserver)
-
-alpha-launcher: build-framework
-	(cd ./services/launcher && tauri dev)
 
 build:
 	(cargo leptos build --release)
