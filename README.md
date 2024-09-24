@@ -10,6 +10,12 @@ Install Mise unless it's already installed:
 
 <https://mise.jdx.dev/getting-started.html>
 
+#### Ubuntu 24.04 requirements
+
+```sh
+sudo apt install gcc automake cmake
+```
+
 ### Installing required tools and dependencies
 
 ```sh
